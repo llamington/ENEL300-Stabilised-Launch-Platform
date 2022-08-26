@@ -29,3 +29,5 @@ kicad_files/#auto_saved_files#
 # Exported BOM files
 *.xml
 *.csv
+
+.vscode/*.log
