@@ -3,16 +3,17 @@
         {
             "name": "Win32",
             "includePath": [
-                "${workspaceFolder}/**"
+                "${workspaceFolder}/software/**",
+                "C:/Program Files (x86)/Arm GNU Toolchain arm-none-eabi/11.3 rel1/lib/gcc/arm-none-eabi/11.3.1/include"
             ],
+            "compilerPath": "C:/Program Files (x86)/Arm GNU Toolchain arm-none-eabi/11.3 rel1/bin/arm-none-eabi-gcc",
             "defines": [
-                "_DEBUG",
-                "UNICODE",
-                "_UNICODE"
+                "USE_HAL_DRIVER",
+                "STM32L011xx"
             ],
             "cStandard": "c17",
             "cppStandard": "c++17",
-            "intelliSenseMode": "windows-msvc-x64"
+            "intelliSenseMode": "gcc-arm"
         }
     ],
     "version": 4
