@@ -1,6 +1,0 @@
-make.exe --dry-run --always-make --keep-going --print-directory
-make: Entering directory 'c:/Users/lissi/vcs_projects/ENEL300-Stabilised-Launch-Platform'
-make: Leaving directory 'c:/Users/lissi/vcs_projects/ENEL300-Stabilised-Launch-Platform'
- 
-make: *** No targets specified and no makefile found.  Stop.
-
