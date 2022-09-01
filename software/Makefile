@@ -64,6 +64,7 @@ Core/Src/gpio.c \
 Core/Src/adc.c \
 Core/Src/i2c.c \
 Core/Src/accelerometer.c \
+Core/Src/potentiometers.c \
 Core/Src/tim.c
 
 # ASM sources
