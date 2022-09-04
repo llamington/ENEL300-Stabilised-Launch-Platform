@@ -6,6 +6,13 @@
 
 #define NUM_POTENTIOMETERS 3
 
+enum
+{
+    POTENTIOMETER_K_P,
+    POTENTIOMETER_K_I,
+    POTENTIOMETER_K_D
+};
+
 /**
  * @brief Begin the reading of potentiometer values
  */
