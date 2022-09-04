@@ -1,6 +1,7 @@
 #ifndef __ACCELEROMETER_H
 #define __ACCELEROMETER_H
 
+#include <stdint.h>
 typedef struct
 {
     int32_t x, y, z;
