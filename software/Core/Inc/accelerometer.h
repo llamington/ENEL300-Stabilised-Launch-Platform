@@ -4,6 +4,8 @@
 #include <stdint.h>
 #include <stdbool.h>
 
+#define NUM_POTENTIOMETERS 3
+
 typedef struct
 {
     int32_t x, y, z;
@@ -28,6 +30,6 @@ bool accelerometer_read_ready(void);
 /**
  * @brief Enables accelerometer data to be read
  */
-void notify_accelerometer_read_ready(void)
+void notify_accelerometer_read_ready(void);
 
 #endif

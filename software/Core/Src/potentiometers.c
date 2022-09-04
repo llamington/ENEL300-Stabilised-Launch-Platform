@@ -2,8 +2,6 @@
 #include "adc.h"
 #include "stm32l0xx_hal.h"
 
-#define NUM_POTENTIOMETERS 3
-
 static uint32_t data_buf[NUM_POTENTIOMETERS];
 static volatile bool read_ready = false;
 

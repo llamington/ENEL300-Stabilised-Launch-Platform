@@ -4,6 +4,8 @@
 #include <stdint.h>
 #include <stdbool.h>
 
+#define NUM_POTENTIOMETERS 3
+
 /**
  * @brief Begin the reading of potentiometer values
  */

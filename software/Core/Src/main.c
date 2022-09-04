@@ -68,7 +68,8 @@ void SystemClock_Config(void);
 int main(void)
 {
   /* USER CODE BEGIN 1 */
-
+  uint32_t *pot_data;
+  acceleration_t accel_data;
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -103,6 +104,13 @@ int main(void)
   {
     begin_accelerometer_read();
     begin_potentiometers_read();
+
+    while (!accelerometer_read_ready() && !potentiometers_read_ready())
+      ;
+
+    get_acceleration(&accel_data);
+    pot_data = get_potentiometers();
+
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
