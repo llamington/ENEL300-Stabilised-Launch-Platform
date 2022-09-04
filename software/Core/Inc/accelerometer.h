@@ -2,6 +2,8 @@
 #define __ACCELEROMETER_H
 
 #include <stdint.h>
+#include <stdbool.h>
+
 typedef struct
 {
     int32_t x, y, z;
@@ -17,5 +19,15 @@ void begin_accelerometer_read(void);
  * @param accel: Acceleration data structure
  */
 void get_acceleration(acceleration_t *accel);
+
+/**
+ * @brief Returns whether the acceleration data is ready to read
+ */
+bool accelerometer_read_ready(void);
+
+/**
+ * @brief Enables accelerometer data to be read
+ */
+void notify_accelerometer_read_ready(void)
 
 #endif

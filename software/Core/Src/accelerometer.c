@@ -1,3 +1,4 @@
+#include <stdbool.h>
 #include "stm32l0xx_hal.h"
 #include "i2c.h"
 #include "accelerometer.h"
@@ -21,6 +22,7 @@ enum
 };
 
 static uint8_t data_buf[ACCELERATION_DATA_SIZE];
+static volatile bool read_ready = false;
 
 void begin_accelerometer_read(void)
 {
@@ -40,4 +42,15 @@ void get_acceleration(acceleration_t *accel)
     accel->y >>= 16 - ACCELERATION_RESOLUTION_BITS;
     accel->z = (data_buf[OUT_Z_H] << 8) & data_buf[OUT_Z_L];
     accel->z >>= 16 - ACCELERATION_RESOLUTION_BITS;
+    read_ready = true;
+}
+
+void notify_accelerometer_read_ready(void)
+{
+    read_ready = true;
+}
+
+bool accelerometer_read_ready(void)
+{
+    return read_ready;
 }
