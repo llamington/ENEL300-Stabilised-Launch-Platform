@@ -8,7 +8,7 @@
 
 typedef struct
 {
-    int32_t x, y, z;
+    int16_t x, y, z;
 } acceleration_t;
 
 /**
