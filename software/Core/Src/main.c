@@ -29,6 +29,7 @@
 #include "accelerometer.h"
 #include "potentiometers.h"
 #include "pid.h"
+#include "servos.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -98,7 +99,7 @@ int main(void)
   MX_I2C1_Init();
   MX_TIM21_Init();
   /* USER CODE BEGIN 2 */
-
+  servos_init();
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -117,6 +118,7 @@ int main(void)
               pot_data[POTENTIOMETER_K_I],
               pot_data[POTENTIOMETER_K_D]);
     compute_control(accel_data.x, accel_data.y, &servo_x_duty, &servo_y_duty);
+    set_servos_duty(servo_x_duty, servo_y_duty);
 
     /* USER CODE END WHILE */
 

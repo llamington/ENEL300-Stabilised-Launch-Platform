@@ -65,6 +65,7 @@ Core/Src/adc.c \
 Core/Src/i2c.c \
 Core/Src/accelerometer.c \
 Core/Src/potentiometers.c \
+Core/Src/servos.c \
 Core/Src/pid.c \
 Core/Src/tim.c \
 Core/Src/dma.c
