@@ -6,8 +6,8 @@
 **
 **  Author		: STM32CubeMX
 **
-**  Abstract    : Linker script for STM32L011F3Px series
-**                8Kbytes FLASH and 2Kbytes RAM
+**  Abstract    : Linker script for STM32L011F4Px series
+**                16Kbytes FLASH and 2Kbytes RAM
 **
 **                Set heap size, stack size and stack location according
 **                to application requirements.
@@ -62,7 +62,7 @@ _Min_Stack_Size = 0x400; /* required amount of stack */
 MEMORY
 {
 RAM (xrw)      : ORIGIN = 0x20000000, LENGTH = 2K
-FLASH (rx)      : ORIGIN = 0x8000000, LENGTH = 8K
+FLASH (rx)      : ORIGIN = 0x8000000, LENGTH = 16K
 }
 
 /* Define output sections */
