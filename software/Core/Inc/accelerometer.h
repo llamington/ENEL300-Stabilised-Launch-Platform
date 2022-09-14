@@ -12,6 +12,11 @@ typedef struct
 } acceleration_t;
 
 /**
+ * @brief Initialise accelerometer
+ */
+void accelerometer_init(void);
+
+/**
  * @brief Begin read of accelerometer's acceleration_data
  */
 void begin_accelerometer_read(void);
