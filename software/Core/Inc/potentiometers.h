@@ -8,11 +8,15 @@
 
 enum
 {
-    POTENTIOMETER_K_P,
     POTENTIOMETER_K_I,
+    POTENTIOMETER_K_P,
     POTENTIOMETER_K_D
 };
 
+/**
+ * @brief Initialise the potentiometers
+ */
+void potentiometers_init(void);
 /**
  * @brief Begin the reading of potentiometer values
  */
@@ -21,7 +25,7 @@ void begin_potentiometers_read(void);
 /**
  * @brief Get the potentiometer values
  */
-uint32_t *get_potentiometers(void);
+uint8_t *get_potentiometers(void);
 
 /**
  * @brief Returns whether the potentiometer data is ready to be read
