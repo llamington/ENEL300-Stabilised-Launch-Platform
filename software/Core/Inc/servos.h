@@ -3,6 +3,10 @@
 
 #include <stdint.h>
 
+#define SERVO_PULSE_MIN 2667
+#define SERVO_PULSE_MAX 5334
+#define SERVO_PULSE_MED ((SERVO_PULSE_MAX + SERVO_PULSE_MIN) / 2)
+
 /**
  * @brief Initialise the servo motors
  */

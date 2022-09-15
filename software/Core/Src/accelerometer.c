@@ -24,7 +24,7 @@ enum
     OUT_Z_H
 };
 
-static volatile uint8_t data_buf[ACCELERATION_DATA_SIZE];
+static uint8_t data_buf[ACCELERATION_DATA_SIZE];
 static volatile bool read_ready = false;
 
 /**
