@@ -59,14 +59,8 @@ void Error_Handler(void);
 /* Private defines -----------------------------------------------------------*/
 #define SERVO1_Pin GPIO_PIN_1
 #define SERVO1_GPIO_Port GPIOA
-#define POT1_Pin GPIO_PIN_4
-#define POT1_GPIO_Port GPIOA
 #define SERVO2_Pin GPIO_PIN_5
 #define SERVO2_GPIO_Port GPIOA
-#define POT2_Pin GPIO_PIN_6
-#define POT2_GPIO_Port GPIOA
-#define POT3_Pin GPIO_PIN_7
-#define POT3_GPIO_Port GPIOA
 /* USER CODE BEGIN Private defines */
 
 /* USER CODE END Private defines */
