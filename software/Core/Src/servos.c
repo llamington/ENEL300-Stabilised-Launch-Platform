@@ -3,6 +3,7 @@
 #include "tim.h"
 #include "servos.h"
 #include "util.h"
+#include "reduced_hal.h"
 
 #define SERVO_X_CHANNEL TIM_CHANNEL_1
 #define SERVO_Y_CHANNEL TIM_CHANNEL_2
@@ -10,7 +11,7 @@
 
 void servos_init(void)
 {
-    HAL_TIM_PWM_Start(&htim2, SERVO_X_CHANNEL);
+    tim_pwm_start(&htim2, SERVO_X_CHANNEL);
     HAL_TIM_PWM_Start(&htim2, SERVO_Y_CHANNEL);
 }
 

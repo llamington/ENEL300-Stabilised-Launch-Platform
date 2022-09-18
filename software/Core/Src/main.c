@@ -140,10 +140,7 @@ void SystemClock_Config(void)
   RCC_OscInitStruct.HSIState = RCC_HSI_ON;
   RCC_OscInitStruct.HSICalibrationValue = RCC_HSICALIBRATION_DEFAULT;
   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_NONE;
-  if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
-  {
-    Error_Handler();
-  }
+  HAL_RCC_OscConfig(&RCC_OscInitStruct);
 
   /** Initializes the CPU, AHB and APB buses clocks
    */
@@ -153,16 +150,10 @@ void SystemClock_Config(void)
   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV1;
   RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;
 
-  if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_0) != HAL_OK)
-  {
-    Error_Handler();
-  }
+  HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_0);
   PeriphClkInit.PeriphClockSelection = RCC_PERIPHCLK_I2C1;
   PeriphClkInit.I2c1ClockSelection = RCC_I2C1CLKSOURCE_PCLK1;
-  if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInit) != HAL_OK)
-  {
-    Error_Handler();
-  }
+  HAL_RCCEx_PeriphCLKConfig(&PeriphClkInit);
 }
 
 /* USER CODE BEGIN 4 */

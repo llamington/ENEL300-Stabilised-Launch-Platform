@@ -3,13 +3,14 @@
 
 #include <stdint.h>
 #include "tim.h"
+#include "reduced_hal.h"
 
 /**
  * @brief Initialise the PID controller
  */
 static inline void pid_init(void)
 {
-    HAL_TIM_Base_Start(&htim21);
+    tim_base_start(&htim21);
 }
 
 /**

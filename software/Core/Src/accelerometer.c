@@ -44,30 +44,24 @@ void accelerometer_init(void)
     uint8_t ctrl1_reg = CTRL_REG1_VALUE;
     wait_accelerometer();
 
-    if (HAL_I2C_Mem_Write(&hi2c1,
-                          ACCELEROMETER_I2C_ADDR << 1,
-                          CTRL_REG1_ADDR,
-                          I2C_MEMADD_SIZE_8BIT,
-                          &ctrl1_reg,
-                          1,
-                          HAL_MAX_DELAY) != HAL_OK)
-    {
-        Error_Handler();
-    }
+    HAL_I2C_Mem_Write(&hi2c1,
+                      ACCELEROMETER_I2C_ADDR << 1,
+                      CTRL_REG1_ADDR,
+                      I2C_MEMADD_SIZE_8BIT,
+                      &ctrl1_reg,
+                      1,
+                      HAL_MAX_DELAY);
 }
 
 void begin_accelerometer_read(void)
 {
     wait_accelerometer();
-    if (HAL_I2C_Mem_Read_IT(&hi2c1,
-                            ACCELEROMETER_I2C_ADDR << 1,
-                            ACCELERATION_REG_ADDR,
-                            I2C_MEMADD_SIZE_8BIT,
-                            data_buf,
-                            ACCELERATION_DATA_SIZE) != HAL_OK)
-    {
-        Error_Handler();
-    }
+    HAL_I2C_Mem_Read_IT(&hi2c1,
+                        ACCELEROMETER_I2C_ADDR << 1,
+                        ACCELERATION_REG_ADDR,
+                        I2C_MEMADD_SIZE_8BIT,
+                        data_buf,
+                        ACCELERATION_DATA_SIZE);
 }
 
 /**

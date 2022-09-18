@@ -22,7 +22,7 @@ TARGET = launch_platform_f3
 # debug build?
 DEBUG = 1
 # optimization
-OPT = -Os
+OPT = -O1
 
 
 #######################################
@@ -36,7 +36,7 @@ BUILD_DIR = build
 ######################################
 # C sources
 C_SOURCES =  \
-Core/Src/main.c \
+Core/Src/test_accelerometer.c \
 Core/Src/stm32l0xx_it.c \
 Core/Src/stm32l0xx_hal_msp.c \
 Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal.c \
@@ -63,7 +63,8 @@ Core/Src/i2c.c \
 Core/Src/accelerometer.c \
 Core/Src/servos.c \
 Core/Src/pid.c \
-Core/Src/tim.c
+Core/Src/tim.c \
+Core/Src/reduced_hal.c
 
 # ASM sources
 ASM_SOURCES =  \
