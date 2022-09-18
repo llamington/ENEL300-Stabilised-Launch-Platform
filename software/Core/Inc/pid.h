@@ -2,6 +2,15 @@
 #define __PID_H
 
 #include <stdint.h>
+#include "tim.h"
+
+/**
+ * @brief Initialise the PID controller
+ */
+static inline void pid_init(void)
+{
+    HAL_TIM_Base_Start(&htim21);
+}
 
 /**
  * @brief Compute the PID control

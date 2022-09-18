@@ -55,7 +55,6 @@
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 /* USER CODE BEGIN PFP */
-
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -101,6 +100,7 @@ int main(void)
   /* USER CODE BEGIN 2 */
   servos_init();
   potentiometers_init();
+  pid_init();
   /* USER CODE END 2 */
 
   /* Infinite loop */
