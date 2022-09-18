@@ -20,11 +20,17 @@ static inline void pid_init(void)
  * @param servo_x: X-axis servo control
  * @param servo_y: Y-axis servo control
  */
-void compute_control(int16_t x, int16_t y, uint16_t *servo_x, uint16_t *servo_y);
+void compute_control(int16_t x,
+                     int16_t y,
+                     uint16_t *servo_x,
+                     uint16_t *servo_y,
+                     uint8_t k_p,
+                     uint8_t k_i,
+                     uint8_t k_d);
 
 /**
  * @brief Sets the PID gains
  */
-void set_gains(uint8_t k_p, uint8_t k_i, uint8_t k_d);
+// void set_gains(uint8_t k_p, uint8_t k_i, uint8_t k_d);
 
 #endif
