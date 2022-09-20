@@ -346,7 +346,7 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "stabilised_launch_platform.kicad_pro",
+    "filename": "ENEL300Group06.kicad_pro",
     "version": 1
   },
   "net_settings": {
@@ -437,11 +437,11 @@
   },
   "pcbnew": {
     "last_paths": {
-      "gencad": "",
+      "gencad": "ENEL300Group06.cad",
       "idf": "",
       "netlist": "",
       "specctra_dsn": "",
-      "step": "",
+      "step": "ENEL300Group06.step",
       "vrml": ""
     },
     "page_layout_descr_file": ""
