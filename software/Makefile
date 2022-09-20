@@ -22,7 +22,7 @@ TARGET = launch_platform_f3
 # debug build?
 DEBUG = 1
 # optimization
-OPT = -Os
+OPT = -O1
 
 
 #######################################

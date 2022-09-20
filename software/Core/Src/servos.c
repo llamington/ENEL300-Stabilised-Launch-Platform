@@ -5,8 +5,8 @@
 #include "util.h"
 #include "reduced_hal.h"
 
-#define SERVO_X_CHANNEL TIM_CHANNEL_1
-#define SERVO_Y_CHANNEL TIM_CHANNEL_2
+#define SERVO_X_CHANNEL TIM_CHANNEL_2
+#define SERVO_Y_CHANNEL TIM_CHANNEL_1
 #define SERVO_PWM_PERIOD 53333 // Period of 20 ms
 
 void servos_init(void)

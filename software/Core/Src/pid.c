@@ -3,8 +3,8 @@
 #include "servos.h"
 #include "stm32l0xx_hal_tim.h"
 
-#define P_CTRL_DIV 25
-#define I_CTRL_DIV 1000
+#define P_CTRL_DIV 175
+#define I_CTRL_DIV 400000
 #define D_CTRL_MUL 1000
 
 void compute_control(int16_t x,
@@ -29,8 +29,8 @@ void compute_control(int16_t x,
     int32_t x_d_ctrl = (int16_t)k_d * (x_err - last_x_err) * D_CTRL_MUL / (int64_t)timer_delta;
     int32_t y_d_ctrl = (int16_t)k_d * (y_err - last_y_err) * D_CTRL_MUL / (int64_t)timer_delta;
 
-    *servo_x = x_p_ctrl + x_i_ctrl + x_d_ctrl + SERVO_PULSE_MED;
-    *servo_y = y_p_ctrl + y_i_ctrl + y_d_ctrl + SERVO_PULSE_MED;
+    *servo_y = x_p_ctrl + x_i_ctrl + x_d_ctrl + SERVO_PULSE_MED;
+    *servo_x = y_p_ctrl + y_i_ctrl + y_d_ctrl + SERVO_PULSE_MED;
 
     last_x_err = x_err;
     last_y_err = y_err;

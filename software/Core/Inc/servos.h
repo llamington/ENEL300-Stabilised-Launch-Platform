@@ -3,8 +3,8 @@
 
 #include <stdint.h>
 
-#define SERVO_PULSE_MIN 2667
-#define SERVO_PULSE_MAX 5334
+#define SERVO_PULSE_MIN 2667 // Board faces right when looking at horn
+#define SERVO_PULSE_MAX 5334 // Board faces left when looking at horn
 #define SERVO_PULSE_MED ((SERVO_PULSE_MAX + SERVO_PULSE_MIN) / 2)
 
 /**

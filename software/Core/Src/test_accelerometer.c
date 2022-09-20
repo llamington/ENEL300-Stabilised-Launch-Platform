@@ -92,12 +92,7 @@ int main(void)
     /* USER CODE BEGIN WHILE */
     while (1)
     {
-        begin_accelerometer_read();
-
-        while (!accelerometer_read_ready())
-            ;
-
-        get_acceleration(&accel_data);
+        read_acceleration(&accel_data);
 
         /* USER CODE END WHILE */
 
