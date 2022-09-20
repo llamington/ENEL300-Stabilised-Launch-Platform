@@ -50,11 +50,11 @@ void MX_I2C1_Init(void)
 
   /** Configure Analogue filter
    */
-  HAL_I2CEx_ConfigAnalogFilter(&hi2c1, I2C_ANALOGFILTER_ENABLE);
+  // HAL_I2CEx_ConfigAnalogFilter(&hi2c1, I2C_ANALOGFILTER_ENABLE);
 
   /** Configure Digital filter
    */
-  HAL_I2CEx_ConfigDigitalFilter(&hi2c1, 0);
+  // HAL_I2CEx_ConfigDigitalFilter(&hi2c1, 0);
 
   /* USER CODE BEGIN I2C1_Init 2 */
 
@@ -97,29 +97,30 @@ void HAL_I2C_MspInit(I2C_HandleTypeDef *i2cHandle)
 
 void HAL_I2C_MspDeInit(I2C_HandleTypeDef *i2cHandle)
 {
+  ;
 
-  if (i2cHandle->Instance == I2C1)
-  {
-    /* USER CODE BEGIN I2C1_MspDeInit 0 */
+  // if (i2cHandle->Instance == I2C1)
+  // {
+  //   /* USER CODE BEGIN I2C1_MspDeInit 0 */
 
-    /* USER CODE END I2C1_MspDeInit 0 */
-    /* Peripheral clock disable */
-    __HAL_RCC_I2C1_CLK_DISABLE();
+  //   /* USER CODE END I2C1_MspDeInit 0 */
+  //   /* Peripheral clock disable */
+  //   __HAL_RCC_I2C1_CLK_DISABLE();
 
-    /**I2C1 GPIO Configuration
-    PA9     ------> I2C1_SCL
-    PA10     ------> I2C1_SDA
-    */
-    HAL_GPIO_DeInit(GPIOA, GPIO_PIN_9);
+  //   /**I2C1 GPIO Configuration
+  //   PA9     ------> I2C1_SCL
+  //   PA10     ------> I2C1_SDA
+  //   */
+  //   HAL_GPIO_DeInit(GPIOA, GPIO_PIN_9);
 
-    HAL_GPIO_DeInit(GPIOA, GPIO_PIN_10);
+  //   HAL_GPIO_DeInit(GPIOA, GPIO_PIN_10);
 
-    /* I2C1 interrupt Deinit */
-    HAL_NVIC_DisableIRQ(I2C1_IRQn);
-    /* USER CODE BEGIN I2C1_MspDeInit 1 */
+  //   /* I2C1 interrupt Deinit */
+  //   HAL_NVIC_DisableIRQ(I2C1_IRQn);
+  //   /* USER CODE BEGIN I2C1_MspDeInit 1 */
 
-    /* USER CODE END I2C1_MspDeInit 1 */
-  }
+  //   /* USER CODE END I2C1_MspDeInit 1 */
+  // }
 }
 
 /* USER CODE BEGIN 1 */

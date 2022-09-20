@@ -80,7 +80,7 @@ void get_acceleration(acceleration_t *accel)
 {
     accel->x = buf_to_accel(OUT_X_L, OUT_X_H);
     accel->y = buf_to_accel(OUT_Y_L, OUT_Y_H);
-    accel->z = buf_to_accel(OUT_Z_L, OUT_Z_H);
+    // accel->z = buf_to_accel(OUT_Z_L, OUT_Z_H);
     read_ready = false;
 }
 

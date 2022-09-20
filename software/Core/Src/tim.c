@@ -104,28 +104,30 @@ void MX_TIM21_Init(void)
 void HAL_TIM_Base_MspInit(TIM_HandleTypeDef *tim_baseHandle)
 {
 
-  if (tim_baseHandle->Instance == TIM2)
-  {
-    /* USER CODE BEGIN TIM2_MspInit 0 */
-
-    /* USER CODE END TIM2_MspInit 0 */
-    /* TIM2 clock enable */
     __HAL_RCC_TIM2_CLK_ENABLE();
-    /* USER CODE BEGIN TIM2_MspInit 1 */
-
-    /* USER CODE END TIM2_MspInit 1 */
-  }
-  else if (tim_baseHandle->Instance == TIM21)
-  {
-    /* USER CODE BEGIN TIM21_MspInit 0 */
-
-    /* USER CODE END TIM21_MspInit 0 */
-    /* TIM21 clock enable */
     __HAL_RCC_TIM21_CLK_ENABLE();
-    /* USER CODE BEGIN TIM21_MspInit 1 */
 
-    /* USER CODE END TIM21_MspInit 1 */
-  }
+
+  // if (tim_baseHandle->Instance == TIM2)
+  // {
+  //   /* USER CODE BEGIN TIM2_MspInit 0 */
+
+  //   /* USER CODE END TIM2_MspInit 0 */
+  //   /* TIM2 clock enable */
+  //   /* USER CODE BEGIN TIM2_MspInit 1 */
+
+  //   /* USER CODE END TIM2_MspInit 1 */
+  // }
+  // else if (tim_baseHandle->Instance == TIM21)
+  // {
+  //   /* USER CODE BEGIN TIM21_MspInit 0 */
+
+  //   /* USER CODE END TIM21_MspInit 0 */
+  //   /* TIM21 clock enable */
+  //   /* USER CODE BEGIN TIM21_MspInit 1 */
+
+  //   /* USER CODE END TIM21_MspInit 1 */
+  // }
 }
 void HAL_TIM_MspPostInit(TIM_HandleTypeDef *timHandle)
 {
@@ -164,29 +166,29 @@ void HAL_TIM_MspPostInit(TIM_HandleTypeDef *timHandle)
 
 void HAL_TIM_Base_MspDeInit(TIM_HandleTypeDef *tim_baseHandle)
 {
+  ;
+  // if (tim_baseHandle->Instance == TIM2)
+  // {
+  //   /* USER CODE BEGIN TIM2_MspDeInit 0 */
 
-  if (tim_baseHandle->Instance == TIM2)
-  {
-    /* USER CODE BEGIN TIM2_MspDeInit 0 */
+  //   /* USER CODE END TIM2_MspDeInit 0 */
+  //   /* Peripheral clock disable */
+  //   __HAL_RCC_TIM2_CLK_DISABLE();
+  //   /* USER CODE BEGIN TIM2_MspDeInit 1 */
 
-    /* USER CODE END TIM2_MspDeInit 0 */
-    /* Peripheral clock disable */
-    __HAL_RCC_TIM2_CLK_DISABLE();
-    /* USER CODE BEGIN TIM2_MspDeInit 1 */
+  //   /* USER CODE END TIM2_MspDeInit 1 */
+  // }
+  // else if (tim_baseHandle->Instance == TIM21)
+  // {
+  //   /* USER CODE BEGIN TIM21_MspDeInit 0 */
 
-    /* USER CODE END TIM2_MspDeInit 1 */
-  }
-  else if (tim_baseHandle->Instance == TIM21)
-  {
-    /* USER CODE BEGIN TIM21_MspDeInit 0 */
+  //   /* USER CODE END TIM21_MspDeInit 0 */
+  //   /* Peripheral clock disable */
+  //   __HAL_RCC_TIM21_CLK_DISABLE();
+  //   /* USER CODE BEGIN TIM21_MspDeInit 1 */
 
-    /* USER CODE END TIM21_MspDeInit 0 */
-    /* Peripheral clock disable */
-    __HAL_RCC_TIM21_CLK_DISABLE();
-    /* USER CODE BEGIN TIM21_MspDeInit 1 */
-
-    /* USER CODE END TIM21_MspDeInit 1 */
-  }
+  //   /* USER CODE END TIM21_MspDeInit 1 */
+  // }
 }
 
 /* USER CODE BEGIN 1 */
