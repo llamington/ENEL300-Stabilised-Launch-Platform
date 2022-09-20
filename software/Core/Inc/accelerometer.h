@@ -16,25 +16,6 @@ typedef struct
  */
 void accelerometer_init(void);
 
-/**
- * @brief Begin read of accelerometer's acceleration_data
- */
-void begin_accelerometer_read(void);
-
-/**
- * @brief Read the most recent acceleration data.
- * @param accel: Acceleration data structure
- */
-void get_acceleration(acceleration_t *accel);
-
-/**
- * @brief Returns whether the acceleration data is ready to read
- */
-bool accelerometer_read_ready(void);
-
-/**
- * @brief Enables accelerometer data to be read
- */
-void notify_accelerometer_read_ready(void);
+void read_acceleration(acceleration_t *accel);
 
 #endif

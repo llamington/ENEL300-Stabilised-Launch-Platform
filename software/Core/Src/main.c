@@ -101,14 +101,7 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-    begin_accelerometer_read();
-
-    while (!accelerometer_read_ready())
-      ;
-
-    get_acceleration(&accel_data);
-
-    // set_gains(128, 0, 128);
+    read_acceleration(&accel_data);
     compute_control(accel_data.x, accel_data.y, &servo_x_duty, &servo_y_duty, 128, 0, 0);
     set_servos_duty(servo_x_duty, servo_y_duty);
 
