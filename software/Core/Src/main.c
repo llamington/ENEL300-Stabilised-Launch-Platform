@@ -102,7 +102,10 @@ int main(void)
   while (1)
   {
     read_acceleration(&accel_data);
-    compute_control(accel_data.x, accel_data.y, &servo_x_duty, &servo_y_duty, 128, 128, 0);
+    compute_control(accel_data.x, accel_data.y,
+                    &servo_x_duty,
+                    &servo_y_duty,
+                    128, 128, 128);
     set_servos_duty(servo_x_duty, servo_y_duty);
 
     /* USER CODE END WHILE */
