@@ -30,8 +30,8 @@ uint8_t *get_potentiometers(void)
 {
     read_ready = false;
 
-    result[0] = data_buf[0] >> 4;
-    result[1] = data_buf[1] >> 4;
-    result[2] = data_buf[2] >> 4;
+    result[0] = data_buf[0] >> 8;
+    result[1] = data_buf[1] >> 8;
+    result[2] = data_buf[2] >> 8;
     return result;
 }

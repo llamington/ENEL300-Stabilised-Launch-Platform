@@ -49,7 +49,7 @@ void MX_ADC_Init(void)
     hadc.Init.Resolution = ADC_RESOLUTION_8B;
     hadc.Init.SamplingTime = ADC_SAMPLETIME_160CYCLES_5;
     hadc.Init.ScanConvMode = ADC_SCAN_DIRECTION_FORWARD;
-    hadc.Init.DataAlign = ADC_DATAALIGN_RIGHT;
+    hadc.Init.DataAlign = ADC_DATAALIGN_LEFT;
     hadc.Init.ContinuousConvMode = DISABLE;
     hadc.Init.DiscontinuousConvMode = DISABLE;
     hadc.Init.ExternalTrigConvEdge = ADC_EXTERNALTRIGCONVEDGE_NONE;
