@@ -25,6 +25,7 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "accelerometer.h"
+#include "potentiometers.h"
 #include "pid.h"
 #include "servos.h"
 /* USER CODE END Includes */

@@ -20,6 +20,9 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "stm32l0xx_it.h"
+#include "adc.h"
+#include "dma.h"
+#include "potentiometers.h"
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 /* USER CODE END Includes */
@@ -55,7 +58,8 @@
 /* USER CODE END 0 */
 
 /* External variables --------------------------------------------------------*/
-extern I2C_HandleTypeDef hi2c1;
+// extern I2C_HandleTypeDef hi2c1;
+extern DMA_HandleTypeDef hdma_adc;
 /* USER CODE BEGIN EV */
 
 /* USER CODE END EV */
@@ -171,5 +175,23 @@ void SysTick_Handler(void)
 // {
 //   Error_Handler();
 // }
+
+/**
+ * @brief This function handles DMA1 channel 1 interrupt.
+ */
+void DMA1_Channel1_IRQHandler(void)
+{
+  /* USER CODE BEGIN DMA1_Channel1_IRQn 0 */
+
+  /* USER CODE END DMA1_Channel1_IRQn 0 */
+  HAL_DMA_IRQHandler(&hdma_adc);
+  /* USER CODE BEGIN DMA1_Channel1_IRQn 1 */
+  /* USER CODE END DMA1_Channel1_IRQn 1 */
+}
+
+void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef *hadc)
+{
+  notify_potentiometers_read_ready();
+}
 
 /* USER CODE END 1 */

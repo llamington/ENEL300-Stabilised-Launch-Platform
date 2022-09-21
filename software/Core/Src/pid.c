@@ -34,7 +34,7 @@ void compute_control(int8_t x,
     int32_t x_d_ctrl = (int32_t)k_d * (x_err - last_x_err) * D_CTRL_MUL / (int32_t)timer_delta;
     int32_t y_d_ctrl = (int32_t)k_d * (y_err - last_y_err) * D_CTRL_MUL / (int32_t)timer_delta;
 
-    *servo_y = x_p_ctrl + x_i_ctrl + x_d_ctrl + SERVO_PULSE_MED;
+    *servo_y = -x_p_ctrl - x_i_ctrl - x_d_ctrl + SERVO_PULSE_MED;
     *servo_x = y_p_ctrl + y_i_ctrl + y_d_ctrl + SERVO_PULSE_MED;
 
     last_x_err = x_err;
