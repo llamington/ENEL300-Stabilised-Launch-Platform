@@ -85,7 +85,7 @@ void MX_TIM21_Init(void)
 
   /* USER CODE END TIM21_Init 1 */
   htim21.Instance = TIM21;
-  htim21.Init.Prescaler = 0;
+  htim21.Init.Prescaler = 100;
   htim21.Init.CounterMode = TIM_COUNTERMODE_UP;
   htim21.Init.Period = 65535;
   htim21.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;

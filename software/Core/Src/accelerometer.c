@@ -6,7 +6,7 @@
 #define ACCELEROMETER_I2C_ADDR 0x18
 #define ACCELERATION_REG_ADDR 0x28 | (1 << 7) // OUT_X_L with auto-increment
 #define CTRL_REG1_ADDR 0x20
-#define CTRL_REG1_VALUE 0b01010111 // 100 Hz, normal power, all axis enabled
+#define CTRL_REG1_VALUE 0b01011111 // 100 Hz, low-power, all axis enabled
 #define ACCELERATION_DATA_SIZE 6
 #define ACCELERATION_RESOLUTION_BITS 10
 #define READY_TRIALS 100
@@ -42,9 +42,9 @@ void read_acceleration(acceleration_t *accel)
     buf[0] = ACCELERATION_REG_ADDR;
     HAL_I2C_Master_Transmit(&hi2c1, ACCELEROMETER_I2C_ADDR << 1, buf, 1, HAL_MAX_DELAY);
     HAL_I2C_Master_Receive(&hi2c1, ACCELEROMETER_I2C_ADDR << 1, buf, ACCELERATION_DATA_SIZE, HAL_MAX_DELAY);
-    accel->x = buf_to_accel(OUT_X_L, OUT_X_H, buf);
-    accel->y = buf_to_accel(OUT_Y_L, OUT_Y_H, buf);
-    accel->z = buf_to_accel(OUT_Z_L, OUT_Z_H, buf);
+    accel->x = buf[OUT_X_H];
+    accel->y = buf[OUT_Y_H];
+    accel->z = buf[OUT_Z_H];
 }
 
 void accelerometer_init(void)
