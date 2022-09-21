@@ -54,7 +54,7 @@ void MX_ADC_Init(void)
     hadc.Init.DiscontinuousConvMode = DISABLE;
     hadc.Init.ExternalTrigConvEdge = ADC_EXTERNALTRIGCONVEDGE_NONE;
     hadc.Init.ExternalTrigConv = ADC_SOFTWARE_START;
-    hadc.Init.DMAContinuousRequests = DISABLE;
+    hadc.Init.DMAContinuousRequests = ENABLE;
     hadc.Init.EOCSelection = ADC_EOC_SEQ_CONV;
     hadc.Init.Overrun = ADC_OVR_DATA_OVERWRITTEN;
     hadc.Init.LowPowerAutoWait = DISABLE;
@@ -124,8 +124,8 @@ void HAL_ADC_MspInit(ADC_HandleTypeDef *adcHandle)
         hdma_adc.Init.Direction = DMA_PERIPH_TO_MEMORY;
         hdma_adc.Init.PeriphInc = DMA_PINC_DISABLE;
         hdma_adc.Init.MemInc = DMA_MINC_ENABLE;
-        hdma_adc.Init.PeriphDataAlignment = DMA_PDATAALIGN_BYTE;
-        hdma_adc.Init.MemDataAlignment = DMA_MDATAALIGN_BYTE;
+        hdma_adc.Init.PeriphDataAlignment = DMA_PDATAALIGN_HALFWORD;
+        hdma_adc.Init.MemDataAlignment = DMA_MDATAALIGN_HALFWORD;
         hdma_adc.Init.Mode = DMA_CIRCULAR;
         hdma_adc.Init.Priority = DMA_PRIORITY_LOW;
         if (HAL_DMA_Init(&hdma_adc) != HAL_OK)
