@@ -21,6 +21,8 @@
 #include "i2c.h"
 #include "tim.h"
 #include "gpio.h"
+#include "dma.h"
+#include "adc.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -69,6 +71,8 @@ int main(void)
   /* USER CODE BEGIN 1 */
   acceleration_t accel_data;
   uint16_t servo_x_duty, servo_y_duty;
+  volatile uint8_t *pot_data;
+
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -88,6 +92,8 @@ int main(void)
   /* USER CODE END SysInit */
 
   /* Initialize all configured peripherals */
+  MX_DMA_Init();
+  MX_ADC_Init();
   MX_GPIO_Init();
   MX_TIM2_Init();
   MX_I2C1_Init();
@@ -96,17 +102,28 @@ int main(void)
   servos_init();
   pid_init();
   accelerometer_init();
+  potentiometers_init();
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+    begin_potentiometers_read();
+
+    while (!potentiometers_read_ready())
+      ;
+
+    pot_data = get_potentiometers();
+
     read_acceleration(&accel_data);
     compute_control(accel_data.x, accel_data.y,
                     &servo_x_duty,
                     &servo_y_duty,
-                    128, 128, 128);
+                    pot_data[POTENTIOMETER_K_P],
+                    pot_data[POTENTIOMETER_K_I],
+                    pot_data[POTENTIOMETER_K_D]);
     set_servos_duty(servo_x_duty, servo_y_duty);
 
     /* USER CODE END WHILE */

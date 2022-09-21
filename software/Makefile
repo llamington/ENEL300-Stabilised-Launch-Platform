@@ -22,7 +22,7 @@ TARGET = launch_platform_f3
 # debug build?
 DEBUG = 1
 # optimization
-OPT = -O1
+OPT = -Os
 
 
 #######################################
@@ -36,7 +36,7 @@ BUILD_DIR = build
 ######################################
 # C sources
 C_SOURCES =  \
-Core/Src/test_potentiometers.c \
+Core/Src/main.c \
 Core/Src/stm32l0xx_it.c \
 Core/Src/stm32l0xx_hal_msp.c \
 Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal.c \
